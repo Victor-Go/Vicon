@@ -1,0 +1,39 @@
+{
+  "name": "vicon-avatars-angular",
+  "version": "0.0.1",
+  "description": "Angular component for vicon-avatars: deterministic landscape icons from any string.",
+  "license": "MIT",
+  "sideEffects": false,
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=17.1.0",
+    "@angular/platform-browser": ">=17.1.0",
+    "vicon-avatars": ">=0.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.6.0"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^19.2.0",
+    "@angular/compiler-cli": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/platform-browser": "^19.2.0",
+    "ng-packagr": "^19.2.0",
+    "rxjs": "^7.8.0",
+    "typescript": "~5.7.0",
+    "vicon-avatars": "file:..",
+    "zone.js": "~0.15.0"
+  },
+  "author": "Victor",
+  "homepage": "https://github.com/Victor-Go/Vicon#readme",
+  "bugs": {
+    "url": "https://github.com/Victor-Go/Vicon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Go/Vicon.git",
+    "directory": "angular"
+  }
+}

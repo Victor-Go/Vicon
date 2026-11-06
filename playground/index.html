@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vicon Playground</title>
+<style>
+  :root { --bg:#0f1220; --panel:#171b2e; --line:#272d48; --txt:#e8ebf7; --dim:#8b93b5; --acc:#6ea8ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:14px/1.45 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+  header { padding:20px 24px 8px; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 20px; max-width:1500px; margin:auto; }
+  h1 { margin:0; font-size:22px; letter-spacing:.3px; }
+  header .sub { color:var(--dim); }
+  header #lang { margin-left:auto; align-self:center; }
+  main { display:grid; grid-template-columns:340px 1fr; gap:20px; padding:12px 24px 40px; max-width:1500px; margin:auto; }
+  @media (max-width:860px){ main{grid-template-columns:1fr} }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:16px; }
+  .big { display:flex; justify-content:center; padding:8px 0 14px; }
+  .big svg { filter:drop-shadow(0 10px 24px #0008); }
+  label { display:block; color:var(--dim); font-size:12px; margin:10px 0 4px; }
+  input[type=text], select { width:100%; background:#0d1021; color:var(--txt); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font:inherit; }
+  button { background:#232a4a; color:var(--txt); border:1px solid var(--line); border-radius:8px; padding:7px 12px; cursor:pointer; font:inherit; }
+  button:hover { border-color:var(--acc); }
+  .row { display:flex; gap:8px; align-items:center; }
+  .layer { display:grid; grid-template-columns:84px 1fr 40px; gap:6px 8px; align-items:center; margin:6px 0; }
+  .layer b { font-weight:500; color:var(--dim); font-size:12px; }
+  .layer input[type=range] { width:100%; }
+  .layer span { text-align:right; font-variant-numeric:tabular-nums; font-size:12px; }
+  .info { color:var(--dim); font-size:12px; margin-top:10px; line-height:1.6; }
+  .info code { color:var(--txt); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(var(--cell,96px),1fr)); gap:10px; }
+  .cell { position:relative; cursor:pointer; line-height:0; border-radius:20%; outline:2px solid transparent; }
+  .grid[data-shape=circle] .cell { border-radius:50%; }
+  .grid[data-shape=square] .cell { border-radius:0; }
+  .cell:hover { outline-color:var(--acc); }
+  .cell svg { width:100%; height:auto; display:block; }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px; }
+  .bar .grow { flex:1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vicon Playground</h1>
+  <span class="sub" id="total"></span>
+  <button id="lang" title="Language / 语言"></button>
+</header>
+<main>
+  <section class="panel">
+    <div class="big" id="big"></div>
+    <div class="row" style="justify-content:center;margin-bottom:6px">
+      <button id="dl-svg" data-i18n="dl_svg"></button>
+      <button id="dl-png" data-i18n="dl_png"></button>
+    </div>
+    <label data-i18n="seed"></label>
+    <div class="row"><input type="text" id="seed" value="hello vicon" /><button id="rand" data-i18n-title="rand">🎲</button></div>
+    <label data-i18n="shape"></label>
+    <select id="shape">
+      <option value="rounded" data-i18n="shape_rounded"></option>
+      <option value="circle" data-i18n="shape_circle"></option>
+      <option value="square" data-i18n="shape_square"></option>
+    </select>
+    <label><span data-i18n="layers"></span> <span style="float:right"><button id="reset" style="padding:2px 8px;font-size:12px" data-i18n="reset"></button></span></label>
+    <div id="layers"></div>
+    <div class="info" id="info"></div>
+  </section>
+  <section class="panel">
+    <div class="bar"><b data-i18n="gallery"></b><span class="grow"></span><span style="color:var(--dim);font-size:12px" data-i18n="hint"></span></div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+<script type="module" src="./main.ts"></script>
+</body>
+</html>
