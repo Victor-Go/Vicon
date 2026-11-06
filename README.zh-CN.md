@@ -1,6 +1,6 @@
 # vicon-avatars
 
-[English](./README.md) · **简体中文**
+[English](./README.md) · **简体中文** · [**在线演示**](https://victor-go.github.io/Vicon/)
 
 确定性的风景图标生成器。输入任意字符串（用户 ID、邮箱、哈希），输出一幅小巧的 SVG 风景：天空、日月、云、飞机、山、城市天际线、路上的公交车……同一个字符串永远得到同一张图。
 
@@ -176,15 +176,19 @@ renderInner(select('alice'), 'circle'); // SVG 内容（viewBox 0 0 100 100）
 
 图标是「字符串 + 包版本」的纯函数。在 `0.x` 阶段，不同版本之间图案可能会变。如果你要存储或比较图标，请锁定精确版本；从 `1.0` 起，图案改动会按破坏性变更处理。
 
-## 在线预览（Playground）
+## 在线演示（Playground）
+
+**在线体验：[victor-go.github.io/Vicon](https://victor-go.github.io/Vicon/)**
+
+输入任意字符串就能看到图标变化，可以逐层调整六个图层、切换形状、浏览随机画廊，并把结果下载为 SVG 或 PNG。页面会根据浏览器语言自动选择中文或英文，右上角可手动切换。
+
+本地运行：
 
 ```bash
 git clone https://github.com/Victor-Go/Vicon.git && cd Vicon
 npm install
 npm run dev        # http://localhost:5173
 ```
-
-Playground 会根据浏览器语言自动选择中文或英文，右上角可手动切换。
 
 ## 开发
 

@@ -1,6 +1,6 @@
 # vicon-avatars
 
-**English** · [简体中文](./README.zh-CN.md)
+**English** · [简体中文](./README.zh-CN.md) · [**Live demo**](https://victor-go.github.io/Vicon/)
 
 Deterministic landscape icons. Give it any string (a user id, an email, a hash) and get back a small, hand-composed SVG scene: sky, sun or moon, clouds, planes, mountains, a skyline, a road with a bus on it. The same string always gives the same picture.
 
@@ -178,13 +178,17 @@ Icons are a pure function of the string **and the package version**. While the v
 
 ## Playground
 
+**Try it online: [victor-go.github.io/Vicon](https://victor-go.github.io/Vicon/)**
+
+Type any string and watch the icon change, step through each of the six layers, switch the shape, browse a random gallery, and download the result as SVG or PNG. It detects your browser language (English or Chinese) and has a language switch in the header.
+
+Run it locally:
+
 ```bash
 git clone https://github.com/Victor-Go/Vicon.git && cd Vicon
 npm install
 npm run dev        # http://localhost:5173
 ```
-
-The playground detects your browser language (English or Chinese) and has a language switch in the header.
 
 ## Development
 
