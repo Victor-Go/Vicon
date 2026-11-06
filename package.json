@@ -75,7 +75,8 @@
     "gallery": "tsup && node scripts/gallery.mjs",
     "build:angular": "tsup && npm --prefix angular run build",
     "prepublishOnly": "npm run build",
-    "test": "tsup && node --test"
+    "test": "tsup && node --test",
+    "build:playground": "vite build playground"
   },
   "peerDependencies": {
     "react": ">=17",
