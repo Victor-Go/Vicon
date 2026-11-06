@@ -1,6 +1,6 @@
 name: Release
 
-# Publishes to npm when you create a GitHub Release (tag like v0.1.1).
+# Stages a release on npm when you create a GitHub Release (tag like v0.1.1).
 # Uses npm trusted publishing (OIDC): no npm token is stored in GitHub.
 on:
   release:
@@ -30,11 +30,14 @@ jobs:
       - run: npm run typecheck
       - run: npm test
 
-      - name: Publish vicon-avatars
-        run: npm publish
+      # Your npm Trusted Publisher is set to "npm stage publish": CI uploads the version to a
+      # staging area, and you approve it (with 2FA) on npmjs.com > package > Staged Packages,
+      # or with `npm stage approve <stage-id>`.
+      - name: Stage vicon-avatars
+        run: npm stage publish
 
-      - name: Build and publish vicon-avatars-angular
+      - name: Build and stage vicon-avatars-angular
         run: |
           npm --prefix angular ci
           npm run build:angular
-          npm publish angular/dist
+          npm stage publish ./angular/dist
