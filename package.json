@@ -124,7 +124,7 @@
     "url": "git+https://github.com/Victor-Go/Vicon.git"
   },
   "bin": {
-    "vicon-avatars": "./dist/cli.js"
+    "vicon-avatars": "dist/cli.js"
   },
   "engines": {
     "node": ">=16"
