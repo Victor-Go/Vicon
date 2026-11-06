@@ -1,6 +1,6 @@
 {
   "name": "vicon-avatars",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Deterministic landscape icon generator: one string in, one of billions of tiny SVG scenes out.",
   "type": "module",
   "sideEffects": false,

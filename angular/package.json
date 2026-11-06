@@ -1,6 +1,6 @@
 {
   "name": "vicon-avatars-angular",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Angular component for vicon-avatars: deterministic landscape icons from any string.",
   "license": "MIT",
   "sideEffects": false,
